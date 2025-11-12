@@ -1,0 +1,86 @@
+/*w3schools, How TO - Full Page Image, Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 12/11/2025)*/
+
+body, html{
+    height: 100%;
+    margin: 0;
+}
+
+#bg
+{
+    background-image: url("tableEmpty.png");
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ballImages{
+    display: flex;
+    position: absolute;
+    height: 7%;
+    width: 7%;
+}
+#redButton{
+    
+    top:31.4%;
+    left:66.2%
+}
+.reds{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    height: 36%;
+    width: 14%;
+
+}
+ 
+.buttons{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    height:6%; 
+    width:3%;
+}
+.balls{
+    height:100%;
+    width: 100%;
+}
+#whiteButton{
+    top:46%;
+    left:18%;
+}
+#blackButton{
+    top: 46%;
+    left: 80%;
+}
+#pinkButton{
+    top: 46%;
+    left: 63%;
+}
+
+#blueButton{
+    top: 46%;
+    left: 48.4%;
+}
+
+#greenButton{
+    top: 28.4%;
+    left: 26%;
+}
+
+#brownButton{
+    top: 46%;
+    left:26%
+}
+
+#yellowButton{
+    top:63.2%;
+    left: 26%;
+}

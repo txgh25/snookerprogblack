@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+    <body id="bg">
+        <div id="whiteBall">
+            <button id="whiteButton" onclick="check('white')" class="buttons">
+                <img src="whiteOnly.png" alt="White Ball" class="balls">
+            </button> 
+        </div>
+        <div id="brownBall">
+            <button id="brownButton" onclick="check('brown')" class="buttons">
+                <img src="brownOnly.png" alt="brown Ball" class="balls">
+            </button> 
+        </div>
+        <div id="greenBall">
+            <button id="greenButton" onclick="check('green')" class="buttons">
+                <img src="greenOnly.png" alt="Green Ball" class="balls">
+            </button> 
+        </div>
+        <div id="yellowBall">
+            <button id="yellowButton" onclick="check('yellow')" class="buttons">
+                <img src="yellowOnly.png" alt="Yellow Ball" class="balls">
+            </button> 
+        </div>
+        <div id="blueBall">
+            <button id="blueButton" onclick="check('blue')" class="buttons">
+                <img src="blueOnly.png" alt="Blue Ball" class="balls">
+            </button> 
+        </div>
+        <div id="pinkBall">
+            <button id="pinkButton" onclick="check('pink')" class="buttons">
+                <img src="pinkOnly.png" alt="Pink Ball" class="balls">
+            </button> 
+        </div>
+        <div id="blackBall">
+            <button id="blackButton" onclick="check('black')" class="buttons">
+                <img src="blackOnly.png" alt="Black Ball" class="balls">
+            </button> 
+        </div>
+        <div id="redBall">
+            <button id="redButton" onclick="red()" class="reds">
+                <img src="red15Only.png" alt="Red Ball" class="balls" id="variableBalls">
+            </button> 
+        </div>
+    </body>
+    <script>
+        var balls=15;
+        function check(ball) {
+            alert("You clicked the " + ball + " ball!");
+        }
+        function red()
+        {
+            balls=balls-1;
+            document.getElementById("variableBalls").src="red" + balls + "Only.png";
+            
+            alert("You clicked the red balls! " + balls + " balls remain");
+            console.log(document.getElementById("redButton").src);
+            if (balls==0)
+            {
+                document.getElementById("redButton").disabled=true;
+                document.getElementById("variableBalls").hidden=true;
+            }
+        }
+    </script>
+</html>
