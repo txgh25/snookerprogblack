@@ -41,6 +41,7 @@
         <div id="blackBall">
             <button id="blackButton" onclick="check('black')" class="buttons">
                 <img src="blackOnly.png" alt="Black Ball" class="balls">
+                
             </button> 
         </div>
         <div id="redBall">
@@ -48,6 +49,63 @@
                 <img src="red15Only.png" alt="Red Ball" class="balls" id="variableBalls">
             </button> 
         </div>
+        <div id="p1Board" class="scoreboards">
+            <img src="scoreboard.png" alt="Player 1 Scoreboard" class="scoreboardImages">
+        </div>
+        <div id="player1Name">
+            <p id="player1Text">Player1</p>
+        </div>
+
+        <div id="player1Hundred">
+            <p id="player1HunText">0</p>
+        </div>
+        
+        
+        <div id="player1Ten">
+            <p id="player1TenText">0</p>
+        </div>
+
+        
+        <div id="player1Unit">
+            <p id="player1UnitText">0</p>
+        </div>
+
+        </div><div id="p2Board" class="scoreboards">
+            <img src="scoreboard.png" alt="Player 2 Scoreboard" class="scoreboardImages">
+        </div>
+
+
+        <div id="player2Name">
+            <p id="player2Text">Player2</p>
+        </div>
+
+        <div id="player2Hundred">
+            <p id="player2HunText">0</p>
+        </div>
+        
+        
+        <div id="player2Ten">
+            <p id="player2TenText">0</p>
+        </div>
+
+        
+        <div id="player2Unit">
+            <p id="player2UnitText">0</p>
+        </div>
+
+    <div class="playerSelection">
+        <input id="p1" type="radio" name="radio" data-href="" checked="checked">
+        <label for="p1" class="radio">
+            <strong>Player 1</strong> 
+        </label>
+
+        <input id="p2" type="radio" name="radio" data-href="">
+        <label for="p2" class="radio">  
+            <strong>Player 2 </strong> 
+        </label>
+    </div>
+    
+        
     </body>
     <script>
         var balls=15;

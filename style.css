@@ -1,5 +1,6 @@
 /*w3schools, How TO - Full Page Image, Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 12/11/2025)*/
-
+/*Background scaling image with window size/
+/*------------------------------------------------------------------------------------*/
 body, html{
     height: 100%;
     margin: 0;
@@ -7,14 +8,13 @@ body, html{
 
 #bg
 {
+    position: relative;
     background-image: url("tableEmpty.png");
-    height: 100%;
-
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100vh;
 }
-
+/*------------------------------------------------------------------------------------*/
 .ballImages{
     display: flex;
     position: absolute;
@@ -71,7 +71,7 @@ body, html{
 }
 
 #greenButton{
-    top: 28.4%;
+    top: 32%;
     left: 26%;
 }
 
@@ -81,6 +81,197 @@ body, html{
 }
 
 #yellowButton{
-    top:63.2%;
+    top:60%;
     left: 26%;
 }
+
+#p1Board{
+    top: 1%;
+    left: 0%;
+
+}
+#p2Board{
+    top: 1%;
+    left: 87%;
+
+}
+.scoreboards{
+    position: absolute;
+    padding: 0;
+    /*height: 12%;   
+    width: 12%;*/
+}
+.scoreboardImages{
+    height: 13vh;   
+    width: 13vw; 
+}
+#player1Name{
+    position: absolute;
+    top:3.5vh;
+    left:6.7vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1Text{
+    font-size: 2.5vh;
+}
+
+#player1Hundred{
+    position: absolute;
+    top:9.5vh;
+    left:2.8vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1HunText{
+    font-size: 5vh;
+}
+#player1Ten{
+    position: absolute;
+    top:9.5vh;
+    left:6.6vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1TenText{
+    font-size: 5vh;
+}
+
+#player1Unit{
+    position: absolute;
+    top:9.5vh;
+    left:10.5vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1UnitText{
+    font-size: 5vh;
+}
+
+#player2Name{
+    position: absolute;
+    top:3.5vh;
+    left:93.7vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2Text{
+    font-size: 2.5vh;
+}
+
+#player2Hundred{
+    position: absolute;
+    top:9.5vh;
+    left:89.8vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2HunText{
+    font-size: 5vh;
+}
+#player2Ten{
+    position: absolute;
+    top:9.5vh;
+    left:93.7vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2TenText{
+    font-size: 5vh;
+}
+
+#player2Unit{
+    position: absolute;
+    top:9.5vh;
+    left:97.5vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2UnitText{
+    font-size: 5vh;
+}
+/*.playerRadio {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+}
+
+.playerRadio input[type='radio'] {
+  display: none;
+}
+
+.playerRadio label {
+  color: #FFF;
+  font-weight: normal;
+}
+
+.playerRadio label:before {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  top: 5vh;
+  margin: 0 7vh 0 0;
+  width: 2vw;
+  height: 4vh;
+  border-radius: 5vh;
+  background-color: #000;
+}
+
+.playerRadio input[type=radio]:checked + label:after {
+  border-radius: 11vh;
+  width: 1.4svw;
+  height: 3vh;
+  position: absolute;
+  top: 5.5vh;
+  left: 0.72vw;
+  content: " ";
+  display: block;
+  background: #f00;
+}*/
+#radioContainer{
+    position: absolute;
+    left:46vw;
+    top:3.8vh;
+}
+.playerSelection {
+    display: grid;
+    position: absolute;
+    top: 3vh;
+    left:47vw;
+}
+
+
+  
+.radio {
+    position: relative;
+    float: left;
+    clear: left;
+    display: block;
+    padding-left: 3vw;
+    margin-bottom: 2vh;
+    font-family:"Arial";
+    line-height: 3vh;
+    font-size: 2vh;
+    color:white;
+    cursor: pointer;
+}
+.radio:before {
+    background: #000;
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: -0.3vh;
+    left: 0;
+    width: 2vw;
+    height: 4vh;
+    border-radius: 100%; 
+}
+input[type="radio"] {
+    display: none;
+} 
+input[type="radio"]:checked + label:before {
+    background-color: #ff0000;   
+    box-shadow: 0px 0px 0px 3px #000 inset;
+}
+
