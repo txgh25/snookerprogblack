@@ -1,4 +1,4 @@
-/*w3schools, How TO - Full Page Image, Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 12/11/2025)*/
+/*w3schools, no date, How TO - Full Page Image, Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 12/11/2025)*/
 /*Background scaling image with window size/
 /*------------------------------------------------------------------------------------*/
 body, html{
@@ -190,45 +190,7 @@ body, html{
 #player2UnitText{
     font-size: 5vh;
 }
-/*.playerRadio {
-  display: inline-block;
-  position: relative;
-  padding: 0 6px;
-  margin: 10px 0 0;
-}
 
-.playerRadio input[type='radio'] {
-  display: none;
-}
-
-.playerRadio label {
-  color: #FFF;
-  font-weight: normal;
-}
-
-.playerRadio label:before {
-  content: " ";
-  display: inline-block;
-  position: absolute;
-  top: 5vh;
-  margin: 0 7vh 0 0;
-  width: 2vw;
-  height: 4vh;
-  border-radius: 5vh;
-  background-color: #000;
-}
-
-.playerRadio input[type=radio]:checked + label:after {
-  border-radius: 11vh;
-  width: 1.4svw;
-  height: 3vh;
-  position: absolute;
-  top: 5.5vh;
-  left: 0.72vw;
-  content: " ";
-  display: block;
-  background: #f00;
-}*/
 #radioContainer{
     position: absolute;
     left:46vw;
@@ -275,3 +237,216 @@ input[type="radio"]:checked + label:before {
     box-shadow: 0px 0px 0px 3px #000 inset;
 }
 
+.BallMenu
+{
+    background-color: #000;
+    position: absolute;
+    height: 50vh;
+    width: 40vw;
+    top:24vh;
+    left:30vw;
+}
+#ballImagePopUp{
+    position: absolute;
+    height:26vh;
+    width: 13vw;
+    left:1vw;
+    top:1vh;
+}
+
+
+.option1{
+    position: absolute;
+    top:5vh;
+    left:15vw;
+    height: 5vh;
+    width: 20vw;
+    font-size: 3vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.option2{
+    position: absolute;
+    top:15vh;
+    left:15vw;
+    height: 5vh;
+    width: 20vw;
+    font-size: 3vmin;
+    justify-content: center;
+    align-items: center;
+}
+.option3{
+    position: absolute;
+    top:25vh;
+    left:15vw;
+    height: 5vh;
+    width: 20vw;
+    font-size: 3vmin;
+    justify-content: center;
+    align-items: center;
+}
+.option4{
+    position: absolute;
+    top:35vh;
+    left:15vw;
+    height: 5vh;
+    width: 20vw;
+    font-size: 3vmin;
+    justify-content: center;
+    align-items: center;
+}
+.back{
+    font-size: 3vh;
+    position: absolute;
+    height: 4.5vh;
+    width: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gameComplete
+{
+    background-color: #000;
+    position: absolute;
+    height:85vh;
+    width:85vw;
+    left:7.5vw;
+    top:7.5vh;
+}
+#p1FinalBoard
+{
+    position: absolute;
+    height:30vh;
+    width:30vw;
+    left:5vw;
+    z-index: 0;
+}
+#p2FinalBoard
+{
+    position: absolute;
+    height:30vh;
+    width:30vw;
+    top:53vh;
+    left:50vw;
+    z-index: 0;
+}
+
+.scoreboardFinalImages
+{
+    height:100%;
+    width:100%;
+}
+/*#player1FinalName
+{
+    position: absolute;
+    transform: translate(-50%,-50%);
+
+}
+#player1FinalText{
+    position: absolute;
+    color: #000;
+    font-size: 200%;
+    z-index:1;
+    top:-1vh;
+    left:11vw;
+}*/
+
+#player1FinalName{
+    position: absolute;
+    top:6vh;
+    left:20vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1FinalText{
+    font-size: 5vh;
+}
+
+#player1FinalUnit{
+    position: absolute;
+    top:20vh;
+    left:29vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1FinalUnitText{
+    font-size: 10vh;
+}
+
+#player1FinalTen{
+    position: absolute;
+    top:20vh;
+    left:20.2vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1FinalTenText{
+    font-size: 10vh;
+}
+
+#player1FinalHundred{
+    position: absolute;
+    top:20vh;
+    left:11.5vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player1FinalHunText{
+    font-size: 10vh;
+}
+
+#player2FinalName{
+    position: absolute;
+    top:59vh;
+    left:65vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2FinalText{
+    font-size: 5vh;
+}
+
+#player2FinalUnit{
+    position: absolute;
+    top:73vh;
+    
+    left:74vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2FinalUnitText{
+    font-size: 10vh;
+}
+
+#player2FinalTen{
+    position: absolute;
+    top:73vh;
+   
+    left:65.3vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2FinalTenText{
+    font-size: 10vh;
+}
+
+#player2FinalHundred{
+    position: absolute;
+    top:73vh;
+    left:56.5vw;
+    transform: translate(-50%,-50%);
+    color: black;
+}
+#player2FinalHunText{
+    font-size: 10vh;
+}
+
+#gameComplete
+{
+    position: relative;
+    background-image: url("winScreen.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

@@ -8,44 +8,45 @@
     
 </head>
     <body id="bg">
+    <div id="game">
         <div id="whiteBall">
-            <button id="whiteButton" onclick="check('white')" class="buttons">
+            <button id="whiteButton" onclick="openWindow('whiteMenu')" class="buttons">
                 <img src="whiteOnly.png" alt="White Ball" class="balls">
             </button> 
         </div>
         <div id="brownBall">
-            <button id="brownButton" onclick="check('brown')" class="buttons">
+            <button id="brownButton" onclick="openWindow('brownMenu')" class="buttons">
                 <img src="brownOnly.png" alt="brown Ball" class="balls">
             </button> 
         </div>
         <div id="greenBall">
-            <button id="greenButton" onclick="check('green')" class="buttons">
+            <button id="greenButton" onclick="openWindow('greenMenu')" class="buttons">
                 <img src="greenOnly.png" alt="Green Ball" class="balls">
             </button> 
         </div>
         <div id="yellowBall">
-            <button id="yellowButton" onclick="check('yellow')" class="buttons">
+            <button id="yellowButton" onclick="openWindow('yellowMenu')" class="buttons">
                 <img src="yellowOnly.png" alt="Yellow Ball" class="balls">
             </button> 
         </div>
         <div id="blueBall">
-            <button id="blueButton" onclick="check('blue')" class="buttons">
+            <button id="blueButton" onclick="openWindow('blueMenu')" class="buttons">
                 <img src="blueOnly.png" alt="Blue Ball" class="balls">
             </button> 
         </div>
         <div id="pinkBall">
-            <button id="pinkButton" onclick="check('pink')" class="buttons">
+            <button id="pinkButton" onclick="openWindow('pinkMenu')" class="buttons">
                 <img src="pinkOnly.png" alt="Pink Ball" class="balls">
             </button> 
         </div>
         <div id="blackBall">
-            <button id="blackButton" onclick="check('black')" class="buttons">
+            <button id="blackButton" onclick="openWindow('blackMenu')" class="buttons">
                 <img src="blackOnly.png" alt="Black Ball" class="balls">
                 
             </button> 
         </div>
         <div id="redBall">
-            <button id="redButton" onclick="red()" class="reds">
+            <button id="redButton" onclick="openWindow('redMenu')" class="reds">
                 <img src="red15Only.png" alt="Red Ball" class="balls" id="variableBalls">
             </button> 
         </div>
@@ -70,7 +71,7 @@
             <p id="player1UnitText">0</p>
         </div>
 
-        </div><div id="p2Board" class="scoreboards">
+        <div id="p2Board" class="scoreboards">
             <img src="scoreboard.png" alt="Player 2 Scoreboard" class="scoreboardImages">
         </div>
 
@@ -93,37 +94,123 @@
             <p id="player2UnitText">0</p>
         </div>
 
-    <div class="playerSelection">
-        <input id="p1" type="radio" name="radio" data-href="" checked="checked">
-        <label for="p1" class="radio">
-            <strong>Player 1</strong> 
-        </label>
+        <div class="playerSelection">
+            <input id="p1" type="radio" name="radio" data-href="" checked="checked">
+            <label for="p1" class="radio">
+                <strong>Player 1</strong> 
+            </label>
 
-        <input id="p2" type="radio" name="radio" data-href="">
-        <label for="p2" class="radio">  
-            <strong>Player 2 </strong> 
-        </label>
-    </div>
-    
+            <input id="p2" type="radio" name="radio" data-href="">
+            <label for="p2" class="radio">  
+                <strong>Player 2 </strong> 
+            </label>
+        </div>
         
-    </body>
-    <script>
-        var balls=15;
-        function check(ball) {
-            alert("You clicked the " + ball + " ball!");
-        }
-        function red()
-        {
-            balls=balls-1;
-            document.getElementById("variableBalls").src="red" + balls + "Only.png";
+
+        <div class="BallMenu" id="whiteMenu" hidden>
+            <img src="whiteOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="whiteFoul()">Potted cue ball</button>
+            <button class="option2" onclick="whiteFoul()">Missed target ball</button>
+            <button class="back" onclick="closeWindow('whiteMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="redMenu" hidden>
+            <img src="red1Isolated.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="redResolve(false)">Red ball hit</button>
+            <button class="option2" onclick="redResolve(true)">Red ball potted</button>
+            <button class="back" onclick="closeWindow('redMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="yellowMenu" hidden>
+            <img src="yellowOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('yellow')">Yellow ball hit</button>
+            <button class="option2" onclick="colourPot('yellow')">Yellow ball potted</button>
+            <button class="back" onclick="closeWindow('yellowMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="greenMenu" hidden>
+            <img src="greenOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('green')">Green ball hit</button>
+            <button class="option2" onclick="colourPot('green')">Green ball potted</button>
+            <button class="back" onclick="closeWindow('greenMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="brownMenu" hidden>
+            <img src="brownOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('brown')">Brown ball hit</button>
+            <button class="option2" onclick="colourPot('brown')">Brown ball potted</button>
+            <button class="back" onclick="closeWindow('brownMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="blueMenu" hidden>
+            <img src="blueOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('blue')">Blue ball hit</button>
+            <button class="option2"onclick="colourPot('blue')">Blue ball potted</button>
+            <button class="back" onclick="closeWindow('blueMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="pinkMenu" hidden>
+            <img src="pinkOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('pink')">Pink ball hit</button>
+            <button class="option2"onclick="colourPot('pink')">Pink ball potted</button>
+            <button class="back" onclick="closeWindow('pinkMenu')">x</button>
+        </div>
+
+        <div class="BallMenu" id="blackMenu" hidden>
+            <img src="blackOnly.png" alt="ballImg" id="ballImagePopUp">
+            <button class="option1" onclick="colourHit('black')">Black ball hit</button>
+            <button class="option2"onclick="colourPot('black')">Black ball potted</button>
+            <button class="back" onclick="closeWindow('blackMenu')">x</button>
+        </div>
+    </div>
+    <div id="gameComplete" hidden>
+        <div id="p1FinalBoard" class="scoreboardDivs">
+            <img src="scoreboard.png" alt="Player 1 Scoreboard" class="scoreboardFinalImages">
+        </div>
+
+        <div id="p2FinalBoard" class="scoreboardDivs">
+            <img src="scoreboard.png" alt="Player 2 Scoreboard" class="scoreboardFinalImages">
+        </div>
             
-            alert("You clicked the red balls! " + balls + " balls remain");
-            console.log(document.getElementById("redButton").src);
-            if (balls==0)
-            {
-                document.getElementById("redButton").disabled=true;
-                document.getElementById("variableBalls").hidden=true;
-            }
-        }
+        
+        <div id="player1FinalName">
+            <p id="player1FinalText">Player 1</p>
+        </div>
+
+        <div id="player1FinalHundred">
+            <p id="player1FinalHunText">0</p>
+        </div>
+        
+        
+        <div id="player1FinalTen">
+            <p id="player1FinalTenText">0</p>
+        </div>
+
+        
+        <div id="player1FinalUnit">
+            <p id="player1FinalUnitText">0</p>
+        </div>
+
+        <div id="player2FinalName">
+            <p id="player2FinalText">Player 2</p>
+        </div>
+
+        <div id="player2FinalHundred">
+            <p id="player2FinalHunText">0</p>
+        </div>
+        
+        
+        <div id="player2FinalTen">
+            <p id="player2FinalTenText">0</p>
+        </div>
+
+        
+        <div id="player2FinalUnit">
+            <p id="player2FinalUnitText">0</p>
+        </div>
+    </div>
+
+    </body>
+    <script src="script.js">
     </script>
 </html>
