@@ -8,7 +8,7 @@
     
 </head>
     <body id="bg">
-    <div id="game">
+    <div id="game" hidden>
         <div id="whiteBall">
             <button id="whiteButton" onclick="openWindow('whiteMenu')" class="buttons">
                 <img src="whiteOnly.png" alt="White Ball" class="balls">
@@ -163,7 +163,7 @@
             <button class="back" onclick="closeWindow('blackMenu')">x</button>
         </div>
     </div>
-    <div id="gameComplete" hidden>
+    <div id="gameComplete">
         <div id="p1FinalBoard" class="scoreboardDivs">
             <img src="scoreboard.png" alt="Player 1 Scoreboard" class="scoreboardFinalImages">
         </div>
@@ -207,6 +207,20 @@
         
         <div id="player2FinalUnit">
             <p id="player2FinalUnitText">0</p>
+        </div>
+
+        <div id="restartContainer">
+            <button id="restartButton" onclick="resetGame()">
+                <img src="newGame.png" alt="newGame" class="restart">
+            </button>
+        </div>
+        <div id="nameInputContainer">
+            <input type="text" id="player1Input">
+            <label for="player1Input" id="player1Label">New player 1 name</label>
+        </div>
+        <div id="nameInput2Container">
+            <input type="text" id="player2Input">
+            <label for="player2Input" id="player2Label">New player 2 name</label>
         </div>
     </div>
 

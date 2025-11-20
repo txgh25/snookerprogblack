@@ -1,10 +1,11 @@
 /*w3schools, no date, How TO - Full Page Image, Available at: https://www.w3schools.com/howto/howto_css_full_page.asp (Accessed: 12/11/2025)*/
 /*Background scaling image with window size/
 /*------------------------------------------------------------------------------------*/
-body, html{
+body,html{
     height: 100%;
     margin: 0;
 }
+
 
 #bg
 {
@@ -449,4 +450,57 @@ input[type="radio"]:checked + label:before {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+#restartButton
+{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    height:20%; 
+    width:20%;
+    top:33vh;
+    left:32vw;
+}  
+.restart
+{
+    height: 100%;
+    width: 100%;
+}
+#player1Input
+{
+    position: absolute;
+    height: 5vh;
+    width:30vw;
+    top:15vh;
+    left:45vw;
+    font-size: 3vmin;
+}
+#player1Label
+{
+    position: absolute;
+    font-size: 4vmin;
+    left:46vw;
+    top:10vh;
+}
+#player2Input
+{
+    position: absolute;
+    height: 5vh;
+    width:30vw;
+    top:70vh;
+    left:15vw;
+    font-size: 3vmin;
+    text-align: right;
+}
+#player2Label
+{
+    position: absolute;
+    font-size: 4vmin;
+    left:30.8vw;
+    top:65vh;
+    text-align: right;
 }

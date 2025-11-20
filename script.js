@@ -330,3 +330,48 @@ function openWindow(toOpen)
 {
     document.getElementById(toOpen).hidden=false;
 }
+
+function resetGame()
+{
+    document.getElementById('gameComplete').hidden=true;
+    document.getElementById('game').hidden=false; 
+    player1Score=0;
+    player2Score=0;
+    balls=15;
+    activePlayer=1;
+    lastMove="";
+    colourOnly=false;
+    activeBall="red"
+    document.getElementById("player1Text").innerHTML=document.getElementById('player1Input').value
+    document.getElementById("player2Text").innerHTML=document.getElementById('player2Input').value
+
+    document.getElementById("player1FinalText").innerHTML=document.getElementById('player1Input').value
+    document.getElementById("player2FinalText").innerHTML=document.getElementById('player2Input').value
+
+    document.getElementById("player1FinalUnitText").innerHTML=0
+    document.getElementById("player1FinalTenText").innerHTML=0
+    document.getElementById("player1FinalHunText").innerHTML=0
+
+    document.getElementById("player2FinalUnitText").innerHTML=0
+    document.getElementById("player2FinalTenText").innerHTML=0
+    document.getElementById("player2FinalHunText").innerHTML=0
+
+    document.getElementById("player1UnitText").innerHTML=0
+    document.getElementById("player1TenText").innerHTML=0
+    document.getElementById("player1FinalHunText").innerHTML=0
+
+    document.getElementById("player2UnitText").innerHTML=0
+    document.getElementById("player2TenText").innerHTML=0
+    document.getElementById("player2HunText").innerHTML=0
+
+    document.getElementById("variableBalls").src="red15Only.png"
+    document.getElementById("redButton").disabled=false;
+    document.getElementById("variableBalls").hidden=false;
+
+    document.getElementById("yellowBall").hidden=false;
+    document.getElementById("greenBall").hidden=false;
+    document.getElementById("brownBall").hidden=false;
+    document.getElementById("blueBall").hidden=false;
+    document.getElementById("pinkBall").hidden=false;
+    document.getElementById("blackBall").hidden=false;
+}
