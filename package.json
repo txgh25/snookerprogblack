@@ -1,0 +1,25 @@
+{
+  "name": "snooker_proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/txgh25/snooker_proj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/txgh25/snooker_proj/issues"
+  },
+  "homepage": "https://github.com/txgh25/snooker_proj#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

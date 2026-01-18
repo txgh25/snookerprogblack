@@ -1,0 +1,20 @@
+{
+    "player 1":{
+        "id":"000001",
+        "gamesPlayed":10,
+        "gamesWon":6,
+        "lifetimePoints":1012
+    },
+    "player 2":{
+        "id":"000002",
+        "gamesPlayed":8,
+        "gamesWon":5,
+        "lifetimePoints":893
+    },
+    "aj":{
+        "id":"000003",
+        "gamesPlayed":15,
+        "gamesWon":9,
+        "lifetimePoints":1500
+    }
+}
