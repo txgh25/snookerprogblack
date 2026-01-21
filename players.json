@@ -1,20 +1,100 @@
 {
-    "player 1":{
-        "id":"000001",
-        "gamesPlayed":10,
-        "gamesWon":6,
-        "lifetimePoints":1012
-    },
-    "player 2":{
-        "id":"000002",
-        "gamesPlayed":8,
-        "gamesWon":5,
-        "lifetimePoints":893
-    },
-    "aj":{
-        "id":"000003",
-        "gamesPlayed":15,
-        "gamesWon":9,
-        "lifetimePoints":1500
-    }
+  "000001": {
+    "name": "player 1",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 2,
+    "gamesWon": 2,
+    "lifetimePoints": 140,
+    "games": [
+      "000001",
+      "000003"
+    ]
+  },
+  "000002": {
+    "name": "player 2",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 2,
+    "gamesWon": 0,
+    "lifetimePoints": 105,
+    "games": [
+      "000001",
+      "000004"
+    ]
+  },
+  "000003": {
+    "name": "player 3",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 2,
+    "gamesWon": 0,
+    "lifetimePoints": 70,
+    "games": [
+      "000002",
+      "000003"
+    ]
+  },
+  "000004": {
+    "name": "player 4",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 2,
+    "gamesWon": 2,
+    "lifetimePoints": 135,
+    "games": [
+      "000002",
+      "000004"
+    ]
+  },
+  "000005": {
+    "name": "alfie",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 1,
+    "gamesWon": 1,
+    "lifetimePoints": 22,
+    "games": [
+      "000005",
+      "000006"
+    ]
+  },
+  "000006": {
+    "name": "AJ",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 1,
+    "gamesWon": 0,
+    "lifetimePoints": 17,
+    "games": [
+      "000005",
+      "000006"
+    ]
+  },
+  "000007": {
+    "name": "aj",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 0,
+    "gamesWon": 0,
+    "lifetimePoints": 0,
+    "games": []
+  },
+  "000008": {
+    "name": "Ariel",
+    "password": "puta",
+    "gamesPlayed": 0,
+    "gamesWon": 0,
+    "lifetimePoints": 0,
+    "games": []
+  },
+  "000009": {
+    "name": "alfieC",
+    "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
+    "gamesPlayed": 0,
+    "gamesWon": 0,
+    "lifetimePoints": 0,
+    "games": []
+  },
+  "000010": {
+    "name": "ariel",
+    "password": "489a845537412def5431c0b0022bac0022dd00dadcb971bf375c862e5b1f0085",
+    "gamesPlayed": 0,
+    "gamesWon": 0,
+    "lifetimePoints": 0,
+    "games": []
+  }  
 }

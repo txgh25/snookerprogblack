@@ -1,0 +1,50 @@
+{
+  "000001": {
+    "name": "player1 vs player2",
+    "player1": "000001",
+    "player2": "000002",
+    "player1Score": 60,
+    "player2Score": 50,
+    "winner": "000001"
+  },
+  "000002": {
+    "name": "player3 vs player4",
+    "player1": "000003",
+    "player2": "000004",
+    "player1Score": 30,
+    "player2Score": 70,
+    "winner": "000004"
+  },
+  "000003": {
+    "name": "player1 vs player3",
+    "player1": "000001",
+    "player2": "000003",
+    "player1Score": 80,
+    "player2Score": 40,
+    "winner": "000001"
+  },
+  "000004": {
+    "name": "player2 vs player4",
+    "player1": "000002",
+    "player2": "000004",
+    "player1Score": 55,
+    "player2Score": 65,
+    "winner": "000004"
+  },
+  "000005": {
+    "name": "alfie vs AJ",
+    "player1": "000005",
+    "player2": "000006",
+    "player1Score": 7,
+    "player2Score": 28,
+    "winner": "000006"
+  },
+  "000006": {
+    "name": "alfie vs AJ",
+    "player1": "000005",
+    "player2": "000006",
+    "player1Score": 22,
+    "player2Score": 17,
+    "winner": "000005"
+  }
+}

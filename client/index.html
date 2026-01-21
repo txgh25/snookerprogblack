@@ -10,43 +10,43 @@
     <body id="bg">
     <div id="game" hidden="true">
         <div id="whiteBall">
-            <button id="whiteButton" onclick="openWindow('whiteMenu')" class="buttons">
+            <button id="whiteButton"  class="buttons">
                 <img src="whiteOnly.png" alt="White Ball" class="balls">
             </button> 
         </div>
         <div id="brownBall">
-            <button id="brownButton" onclick="openWindow('brownMenu')" class="buttons">
+            <button id="brownButton"  class="buttons">
                 <img src="brownOnly.png" alt="brown Ball" class="balls">
             </button> 
         </div>
         <div id="greenBall">
-            <button id="greenButton" onclick="openWindow('greenMenu')" class="buttons">
+            <button id="greenButton" class="buttons">
                 <img src="greenOnly.png" alt="Green Ball" class="balls">
             </button> 
         </div>
         <div id="yellowBall">
-            <button id="yellowButton" onclick="openWindow('yellowMenu')" class="buttons">
+            <button id="yellowButton" class="buttons">
                 <img src="yellowOnly.png" alt="Yellow Ball" class="balls">
             </button> 
         </div>
         <div id="blueBall">
-            <button id="blueButton" onclick="openWindow('blueMenu')" class="buttons">
+            <button id="blueButton"  class="buttons">
                 <img src="blueOnly.png" alt="Blue Ball" class="balls">
             </button> 
         </div>
         <div id="pinkBall">
-            <button id="pinkButton" onclick="openWindow('pinkMenu')" class="buttons">
+            <button id="pinkButton" class="buttons">
                 <img src="pinkOnly.png" alt="Pink Ball" class="balls">
             </button> 
         </div>
         <div id="blackBall">
-            <button id="blackButton" onclick="openWindow('blackMenu')" class="buttons">
+            <button id="blackButton"  class="buttons">
                 <img src="blackOnly.png" alt="Black Ball" class="balls">
                 
             </button> 
         </div>
         <div id="redBall">
-            <button id="redButton" onclick="openWindow('redMenu')" class="reds">
+            <button id="redButton"  class="reds">
                 <img src="red15Only.png" alt="Red Ball" class="balls" id="variableBalls">
             </button> 
         </div>
@@ -157,6 +157,50 @@
     </div>
     <div id="gameComplete">
 
+        <div class="matchHolder" id="matchHolder">
+            <div class="matchHider">
+                <div class="matchImage">
+                    <img src="matchBoard.png" alt="Match Image" class="matchImg">
+                    <div class="matchContent">
+                        <h2 id="matchTitle">Recent Matches</h2>
+
+                        <div id="match1">
+                            <p id="match1Players">Player1 vs Player2</p>
+                            <p id="match1Score">0 - 0</p>
+                            <p id="match1Winner">Winner: TBD</p>
+                        </div>
+                        
+                        <div id ="match2">
+                        
+                            <p id="match2Players">Player3 vs Player4</p>
+                            <p id="match2Score">0 - 0</p>
+                            <p id="match2Winner">Winner: TBD</p>
+
+                        </div>
+
+                        <div id="match3">
+                        <p id="match3Players">Player5 vs Player6</p>
+                        <p id="match3Score">0 - 0</p>
+                        <p id="match3Winner">Winner: TBD</p>
+                        </div>
+
+                        <div id="match4">
+                        <p id="match4Players">Player7 vs Player8</p>
+                        <p id="match4Score">0 - 0</p>
+                        <p id="match4Winner">Winner: TBD</p>
+                        </div>
+                        
+                        <label for="matchFilter" class="visHide">Filter by player</label>
+                        <select id="matchFilter">
+                            <option value="">All players.</option>
+                        </select>
+
+                    </div>
+                    <div class="matchButton" id="matchButton"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="clipboardHolder" id="clipboardHolder">
             <div class="clipboardHider">
                 <div class="clipImage">
@@ -166,12 +210,43 @@
                         <p id="player1ClipGames">Games Played: 0</p>
                         <p id="player1ClipWins">Games Won: 0</p>
                         <p id="player1ClipAverage">Average points: 0</p>
+                        <h3 id="player1RecentGames">Recent games</h3>
+                        <p id="game1Name1"></p>
+                        <p id="game1Score1"></p>
+                        <p id="game1Winner1"></p>
+                        <p id="game2Name1"></p>
+                        <p id="game2Score1"></p>
+                        <p id="game2Winner1"></p>
                     </div>
                     <div class="clipboardButton" id="clipboardButton"></div>
                 </div>
                 
             </div>
-        </div>    
+        </div>
+        
+        <div class="clipboardHolderReverse" id="clipboardHolderReverse">
+            <div class="clipboardHiderReverse">
+                <div class="clipImageReverse">
+                    <img src="clipboardReverse.png" alt="Clipboard Image" class="clipboardImgReverse">
+                    <div class="clipboardContentReverse">
+                        <h2 id="player2ClipName">Player 2</h2>
+                        <p id="player2ClipGames">Games Played: 0</p>
+                        <p id="player2ClipWins">Games Won: 0</p>
+                        <p id="player2ClipAverage">Average points: 0</p>
+                        <h3 id="player2RecentGames">Recent games</h3>
+                        <p id="game1Name2"></p>
+                        <p id="game1Score2"></p>
+                        <p id="game1Winner2"></p>
+                        <p id="game2Name2"></p>
+                        <p id="game2Score2"></p>
+                        <p id="game2Winner2"></p>
+                    </div>
+                    <div class="clipboardButtonReverse" id="clipboardButtonReverse"></div>
+                </div>
+                
+            </div>
+        </div>
+
         <div id="p1FinalBoard" class="scoreboardDivs">
             <img src="scoreboard.png" alt="Player 1 Scoreboard" class="scoreboardFinalImages">
         </div>
@@ -217,19 +292,33 @@
             <p id="player2FinalUnitText">0</p>
         </div>
 
-        <div id="restartContainer">
+        <div id="restartContainer" hidden="true">
             <button id="restartButton" onclick="resetGame()">
                 <img src="newGame.png" alt="newGame" class="restart">
                 <p id="startText">Start</p>
             </button>
         </div>
         <div id="nameInputContainer">
-            <input type="text" id="player1Input">
-            <label for="player1Input" id="player1Label">New player 1 name</label>
+            <form>
+            <input type="text" id="player1Input" placeholder="Username" autocomplete="username">
+            <input type="password" id="player1Pass" placeholder="Password"  autocomplete="current-password">
+            <button id="login1" type="button">Log in/Sign up</button>
+            </form>
+        </div>
+        <div id="signedIn" hidden="true">
+            <p id="signedInText">Player 1 ready</p>
+            <button id="signOut1">Sign in with another account</button>
+        </div>
+        <div id="signedIn2" hidden="true">
+            <p id="signedInText2">Player 2 ready</p>
+            <button id="signOut2">Sign in with another account</button>
         </div>
         <div id="nameInput2Container">
-            <input type="text" id="player2Input">
-            <label for="player2Input" id="player2Label">New player 2 name</label>
+            <form>
+            <input type="text" id="player2Input" placeholder="Username" autocomplete="username">
+            <input type="password" id="player2Pass" placeholder="Password" autocomplete="current-password">
+            <button id="login2" type="button">Log in/Sign up</button>
+            </form>
         </div>
         
             
