@@ -37,7 +37,8 @@ The request can be filtered by ID to return a particular player's name or left b
 
 `http://localhost:8090/players`
 
-`{
+```
+{
   "pList": [
     {
       "id": "000001",
@@ -124,8 +125,8 @@ The request can be filtered by ID to return a particular player's name or left b
       "name": "EXAMPLE_PLAYER2"
     }
   ]
-}`
-
+}
+```
 
 ---
 
