@@ -27,7 +27,7 @@ The request can be filtered by ID to return a particular player's name or left b
 
 - `search` (optional, string) – Player name to filter by. If omitted, all players are returned.
 
-**Responses**
+**Response fields**
 
 - `200 OK` – JSON array of players (or a single player when filtered by ID), including:
   - `id` (string)
@@ -35,8 +35,12 @@ The request can be filtered by ID to return a particular player's name or left b
 
 **Examples**
 
+*GET player names and IDs*
+
+Request
 `http://localhost:8090/players`
 
+Response
 ```
 {
   "pList": [
@@ -127,6 +131,34 @@ The request can be filtered by ID to return a particular player's name or left b
   ]
 }
 ```
+*GET player ID with name 'player 1'*
+
+Request
+`http://localhost:8090/players?search=player%201`
+
+Response
+```
+{
+  "pList": [
+    {
+      "id": "000001",
+      "name": "player 1"
+    }
+  ]
+}
+```
+
+*GET player ID with invalid name*
+
+Request
+`http://localhost:8090/players?search=player%20X`
+
+Response
+```
+{
+  "pList": []
+}
+```
 
 ---
 
@@ -135,7 +167,7 @@ The request can be filtered by ID to return a particular player's name or left b
 **Request**
 
 - **Method:** `GET`  
-- **URL:** `/players/{id}`  
+- **URL:** `http://localhost:8090/players/{id}`  
 
 **Path Parameters**
 
@@ -146,7 +178,7 @@ The request can be filtered by ID to return a particular player's name or left b
 Request to get the full details of a player.  
 Requires the variable `id` to be entered to find the player by their ID.
 
-**Response (conceptual)**
+**Response fields**
 
 - `200 OK` – JSON object with:
   - `id` (string)
@@ -157,6 +189,66 @@ Requires the variable `id` to be entered to find the player by their ID.
   - `matches` (array) – array of matches played (structure depends on implementation)
 - `404 Not Found` – if the player is not found.
 
+**Examples**
+
+*GET player with ID 000003*
+
+Request
+
+`http://localhost:8090/players/000003`
+
+Response
+```
+{
+  "id": "000003",
+  "name": "player 3",
+  "gamesPlayed": 2,
+  "gamesWon": 0,
+  "lifetimePoints": 70,
+  "matches": [
+    {
+      "id": "000002",
+      "name": "player 3 vs player 4",
+      "opponent": {
+        "id": "000004",
+        "name": "player 4"
+      },
+      "playerScore": 30,
+      "opponentScore": 70,
+      "winner": {
+        "id": "000004",
+        "name": "player 4"
+      }
+    },
+    {
+      "id": "000003",
+      "name": "player 3 vs player 1",
+      "opponent": {
+        "id": "000001",
+        "name": "player 1"
+      },
+      "playerScore": 40,
+      "opponentScore": 80,
+      "winner": {
+        "id": "000001",
+        "name": "player 1"
+      }
+    }
+  ]
+}
+```
+
+*GET player with invalid ID*
+
+Request
+`http://localhost:8090/players/XXXXXX`
+
+Response
+```
+{
+  "error": "Player not found"
+}
+```
 
 ---
 
@@ -165,7 +257,7 @@ Requires the variable `id` to be entered to find the player by their ID.
 **Request**
 
 - **Method:** `POST`  
-- **URL:** `/players`  
+- **URL:** `http//:localhost:8090/players`  
 - **Body:** `application/json`
 
 **Description**
@@ -176,15 +268,6 @@ The other attributes for a new player are initialised to `0`.
 
 On success the player's ID and name are returned as JSON.
 
-**Request Body (example)**
-
-```json
-{
-  "username": "player1",
-  "password": "securePassword123"
-}
-```
-
 **Response (conceptual)**
 
 - `201 Created` – JSON with:
@@ -193,6 +276,44 @@ On success the player's ID and name are returned as JSON.
 - `409 Conflict` – if a player with the same username already exists.
 - `400 Bad Request` – if the body is invalid.
 
+**Examples**
+
+*POST to save player with name 'EXAMPLE_PLAYER'*
+
+Request
+`http:localhost:8090/players`
+```body:
+{
+  "name":"EXAMPLE_PLAYER",
+  "password":"PASSWORD"
+}
+```
+
+Response
+```
+{
+  "id": "000023",
+  "name": "EXAMPLE_PLAYER4"
+}
+```
+
+*POST of player which already exists*
+
+Request
+`http://localhost:8090/players`
+```body:
+{
+  "name":"EXAMPLE_PLAYER",
+  "password":"PASSWORD"
+}
+```
+
+Response
+```
+{
+  "error": "Player with this name already exists"
+}
+```
 
 ---
 
@@ -205,7 +326,7 @@ The API documentation concerned with storing and retrieving match data can be fo
 **Request**
 
 - **Method:** `GET`  
-- **URL:** `/games`  
+- **URL:** `http://localhost:8090/games`  
 
 **Description**
 
@@ -216,17 +337,152 @@ It may be filtered by the addition of a player ID to search by so that it only i
 
 - `player` (optional, string) – Player ID to filter games by.
 
-**Example**
-
-```http
-GET /games?player=000001
-```
-
+  
 **Response (conceptual)**
 
 - `200 OK` – JSON array of games, each including at least:
   - `id` (string)
   - `name` (string)
+
+**Examples**
+
+*GET all game IDs and names*
+
+Request
+`http://localhost:8090/games`
+
+Response
+```
+{
+  "mList": [
+    {
+      "id": "000001",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000002",
+      "name": "player 3 vs player 4"
+    },
+    {
+      "id": "000003",
+      "name": "player 1 vs player 3"
+    },
+    {
+      "id": "000004",
+      "name": "player 2 vs player 4"
+    },
+    {
+      "id": "000005",
+      "name": "alfie vs AJ"
+    },
+    {
+      "id": "000006",
+      "name": "alfie vs AJ"
+    },
+    {
+      "id": "000007",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000008",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000009",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000010",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000011",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000012",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000013",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000014",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000015",
+      "name": "EXAMPLE_PLAYER1 vs EXAMPLE_PLAYER2"
+    }
+  ]
+}
+```
+
+*GET all game IDs and names with the player ID 000001*
+
+Request
+`http://localhost:8090/games?player=000001`
+
+Response
+```
+{
+  "mList": [
+    {
+      "id": "000001",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000003",
+      "name": "player 1 vs player 3"
+    },
+    {
+      "id": "000007",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000008",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000009",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000010",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000011",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000012",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000013",
+      "name": "player 1 vs player 2"
+    },
+    {
+      "id": "000014",
+      "name": "player 1 vs player 2"
+    }
+  ]
+}
+```
+
+*GET games containing an invalid player ID*
+
+Request
+`http://localhost:8090/games?player=000001`
+
+Response
+```
+{
+  "mList": []
+}
+```
 
 
 ---
