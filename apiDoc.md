@@ -2,12 +2,12 @@
 
 This API is for communication with the server for the storage, searching and detailing of games of snooker and the players who played them.
 
-Base URL: `http://localhost:8090`
-
 
 ---
 
 ## Players
+
+
 
 The API documentation concerned with retrieving and storing player data are stored here.
 
@@ -16,7 +16,7 @@ The API documentation concerned with retrieving and storing player data are stor
 **Request**
 
 - **Method:** `GET`  
-- **URL:** `/players`  
+- **URL:** `http://localhost:8090/players`  
 
 **Description**
 
@@ -25,13 +25,106 @@ The request can be filtered by ID to return a particular player's name or left b
 
 **Query Parameters**
 
-- `id` (optional, string) – Player ID to filter by. If omitted, all players are returned.
+- `search` (optional, string) – Player name to filter by. If omitted, all players are returned.
 
-**Response (conceptual)**
+**Responses**
 
 - `200 OK` – JSON array of players (or a single player when filtered by ID), including:
   - `id` (string)
   - `name` (string)
+
+**Examples**
+
+`http://localhost:8090/players`
+
+`{
+  "pList": [
+    {
+      "id": "000001",
+      "name": "player 1"
+    },
+    {
+      "id": "000002",
+      "name": "player 2"
+    },
+    {
+      "id": "000003",
+      "name": "player 3"
+    },
+    {
+      "id": "000004",
+      "name": "player 4"
+    },
+    {
+      "id": "000005",
+      "name": "alfie"
+    },
+    {
+      "id": "000006",
+      "name": "AJ"
+    },
+    {
+      "id": "000007",
+      "name": "aj"
+    },
+    {
+      "id": "000008",
+      "name": "Ariel"
+    },
+    {
+      "id": "000009",
+      "name": "alfieC"
+    },
+    {
+      "id": "000010",
+      "name": "ariel"
+    },
+    {
+      "id": "000011",
+      "name": "Player1769033224229"
+    },
+    {
+      "id": "000012",
+      "name": "Player1769033320809"
+    },
+    {
+      "id": "000013",
+      "name": "Player1769033356195"
+    },
+    {
+      "id": "000014",
+      "name": "Player1769033513952"
+    },
+    {
+      "id": "000015",
+      "name": "Player1769033529928"
+    },
+    {
+      "id": "000016",
+      "name": "Player1769091453911"
+    },
+    {
+      "id": "000017",
+      "name": "Player1769094260797"
+    },
+    {
+      "id": "000018",
+      "name": "Player1769094382948"
+    },
+    {
+      "id": "000019",
+      "name": "EXAMPLE_PLAYER"
+    },
+    {
+      "id": "000020",
+      "name": "EXAMPLE_PLAYER1"
+    },
+    {
+      "id": "000021",
+      "name": "EXAMPLE_PLAYER2"
+    }
+  ]
+}`
 
 
 ---
