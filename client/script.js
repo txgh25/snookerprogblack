@@ -651,10 +651,10 @@ document.getElementById("login1").addEventListener("click", async function(e) {
                 alert("Invalid username or password for Player 1");
             }
         }
-        else if (response.status === 403) {
+        else if (response.status == 403) {
             alert(result.error || "Invalid username or password for Player 1");
         }
-        else if (response.status === 400) {
+        else if (response.status == 400) {
             const newUserResponse= await fetch('/players', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -744,10 +744,10 @@ document.getElementById("login2").addEventListener("click", async function(e) {
                 alert("Invalid username or password for Player 2");
             }
         }
-        else if (response.status === 403) {
+        else if (response.status == 403) {
             alert(result.error || "Invalid username or password for Player 2");
         }
-        else if (response.status === 400) {
+        else if (response.status == 400) {
             const newUserResponse= await fetch('/players', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -1010,7 +1010,7 @@ async function loadMatchFilter()
     const select = document.getElementById("matchFilter");
     select.innerHTML = '<option value="">All players</option>';
 
-    (data.items || []).forEach(p =>
+    (data.pList || []).forEach(p =>
     {
         const opt=document.createElement("option");
         opt.value=p.id;
@@ -1024,7 +1024,7 @@ async function loadMatchPlayer(playerID)
     const res = await fetch(playerID ? `/games?player=${encodeURIComponent(playerID)}`:"/games")
     const data =await res.json();
 
-    const recents = (data.items ||[]).slice().sort((a,b)=> Number(b.id)-Number(a.id)).slice(0,4);
+    const recents = (data.mList ||[]).slice().sort((a,b)=> Number(b.id)-Number(a.id)).slice(0,4);
 
     const details = await Promise.all(
         recents.map(async (m)=>{
