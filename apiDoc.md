@@ -268,12 +268,11 @@ The other attributes for a new player are initialised to `0`.
 
 On success the player's ID and name are returned as JSON.
 
-**Response (conceptual)**
+**Response fields**
 
-- `201 Created` – JSON with:
+- `200 OK` – JSON with:
   - `id` (string)
   - `name` (string)
-- `409 Conflict` – if a player with the same username already exists.
 - `400 Bad Request` – if the body is invalid.
 
 **Examples**
@@ -338,7 +337,7 @@ It may be filtered by the addition of a player ID to search by so that it only i
 - `player` (optional, string) – Player ID to filter games by.
 
   
-**Response (conceptual)**
+**Response fields**
 
 - `200 OK` – JSON array of games, each including at least:
   - `id` (string)
@@ -492,7 +491,7 @@ Response
 **Request**
 
 - **Method:** `GET`  
-- **URL:** `/games/{id}`  
+- **URL:** `http://localhost:8090/games/{id}`  
 
 **Path Parameters**
 
@@ -503,11 +502,51 @@ Response
 GET request which returns a JSON of the game with `id` passed into the URL.  
 Returns all fields for that game or returns an error if the match is not found.
 
-**Response (conceptual)**
+**Response fields**
 
 - `200 OK` – JSON object with all fields for the game (IDs of players, scores, etc., depending on implementation).
 - `404 Not Found` – if the match is not found.
 
+**Examples**
+
+*GET details of a match with ID 000001*
+
+Request
+`http://localhost:8090/games/000001`
+
+Response
+```
+{
+  "id": "000001",
+  "name": "player1 vs player2",
+  "player1": {
+    "id": "000001",
+    "name": "player 1"
+  },
+  "player2": {
+    "id": "000002",
+    "name": "player 2"
+  },
+  "player1Score": 60,
+  "player2Score": 50,
+  "winner": {
+    "id": "000001",
+    "name": "player 1"
+  }
+}
+```
+
+*GET details of a match with invalid ID*
+
+Request
+`http://localhost:8090//XXXXXX`
+
+Response
+```
+{
+  "error": "Match not found"
+}
+```
 
 ---
 
@@ -516,7 +555,7 @@ Returns all fields for that game or returns an error if the match is not found.
 **Request**
 
 - **Method:** `POST`  
-- **URL:** `/games`  
+- **URL:** `http://localhost:8090/games`  
 - **Body:** `application/json`
 
 **Description**
@@ -525,9 +564,21 @@ POST request which adds a new game to the games JSON, providing the players in t
 
 On successful completion a JSON is returned with the match ID and winner ID.
 
-**Request Body (example)**
 
-```json
+**Response fields**
+
+- `200 OK` – JSON with:
+  - `matchId` (string)
+  - `winnerId` (string)
+- `400 Bad Request` – if player IDs are invalid or both players have the same ID.
+
+**Examples**
+
+*POST create a game between players with IDs 000020 and 000021*
+
+Request
+`https://localhost:8090/games`
+```body
 {
   "playerOneId": "000001",
   "playerTwoId": "000002",
@@ -538,14 +589,35 @@ On successful completion a JSON is returned with the match ID and winner ID.
 }
 ```
 
-**Response (conceptual)**
+Response 
+```
+{
+  "id": "000016",
+  "winnerID": "000021"
+}
+```
 
-- `201 Created` – JSON with:
-  - `matchId` (string)
-  - `winnerId` (string)
-- `400 Bad Request` – if player IDs are invalid or both players have the same ID.
-- `404 Not Found` – if one or both players do not exist.
+*POST create game between the same players*
 
+Request
+`http://localhost:8090/games`
+```body
+{
+    "player1ID":"000021",
+    "player2ID":"000021",
+    "player1Score":"22",
+    "player2Score":"27"
+
+}
+```
+
+Response
+```
+{
+  "id": "000016",
+  "winnerID": "000021"
+}
+```
 
 ---
 
@@ -558,7 +630,7 @@ API documentation concerned with the sign-in process is found here.
 **Request**
 
 - **Method:** `GET`  
-- **URL:** `/login/{user}/{pass}`  
+- **URL:** `http:localhost:8090//login/{user}/{pass}`  
 
 **Path Parameters**
 
@@ -574,7 +646,7 @@ On incorrect password or no user found the correct error will be returned.
 
 > Note: Passing passwords in the URL is generally insecure; consider switching this to a `POST` with JSON body for production systems.
 
-**Response (conceptual)**
+**Response fields**
 
 - `200 OK` – JSON:
   ```json
@@ -583,5 +655,46 @@ On incorrect password or no user found the correct error will be returned.
     "id": "000001"
   }
   ```
-- `401 Unauthorized` – if the password is incorrect.
-- `404 Not Found` – if no user is found.
+- `403 Forbidden` – if the password is incorrect.
+- `400 Bad Request` – if no user is found.
+
+**Examples**
+
+*GET login with correct user and password*
+
+Request
+`http://localhost:8090login/player%201/Pass`
+
+Response
+```
+{
+  "valid": true,
+  "id": "000001"
+}
+```
+
+*GET login where user does not exist*
+
+Request
+`http://localhost:8090/login/player%20X/Pass`
+
+Response
+```
+{
+  "valid": false,
+  "error": "User not found"
+}
+```
+
+*GET login where user exists but password does not macth*
+
+Request
+`http://localhost:8090/login/player%201/pass`
+
+Response
+```
+{
+  "valid": false,
+  "error": "Invalid password"
+}
+```
