@@ -104,7 +104,7 @@ app.get('/players/:id', (req, res) => {
     const p=players[id];
 
     if(!p){
-        return res.status(400).json({error:"Player not found"});
+        return res.status(404).json({error:"Player not found"});
     }
 
     const playedIn = Object.entries(matches)
@@ -141,7 +141,7 @@ app.get('/games/:id', (req, res) => {
     const m=matches[id];
 
     if(!m){
-        return res.status(400).json({error:"Match not found"});
+        return res.status(404).json({error:"Match not found"});
     }
 
     const player1 = players[m.player1]? {id: m.player1, name: players[m.player1].name}: {id: m.player1, name: "Unknown Player"};

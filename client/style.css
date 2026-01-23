@@ -1188,7 +1188,7 @@ body,html{
 }
 #match4Score
 {
-    font-size: 4vmin;
+    font-size:inherit;
     position: relative;
     top:25%;
     left:3%;
@@ -1218,4 +1218,11 @@ body,html{
     
     font-size: 3vmin;
 
+}
+.titles
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: help;
 }

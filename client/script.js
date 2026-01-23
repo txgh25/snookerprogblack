@@ -1048,6 +1048,8 @@ async function loadMatchPlayer(playerID)
     document.getElementById("match4Players").textContent= details[3]?details[3].name:"No game found";
     document.getElementById("match4Score").textContent= details[3]? (details[3].player1Score + " - " + details[3].player2Score):"";
     document.getElementById("match4Winner").textContent= details[3]? (details[3].winner? ("Winner: "+details[3].winner.name):"Winner: Draw"):"";
+
+
 }
 
 document.addEventListener("DOMContentLoaded", async()=>{

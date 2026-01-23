@@ -2,9 +2,9 @@
   "000001": {
     "name": "player 1",
     "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
-    "gamesPlayed": 10,
-    "gamesWon": 10,
-    "lifetimePoints": 220,
+    "gamesPlayed": 11,
+    "gamesWon": 11,
+    "lifetimePoints": 230,
     "games": [
       "000001",
       "000003",
@@ -15,15 +15,16 @@
       "000011",
       "000012",
       "000013",
-      "000014"
+      "000014",
+      "000018"
     ]
   },
   "000002": {
     "name": "player 2",
     "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
-    "gamesPlayed": 10,
+    "gamesPlayed": 11,
     "gamesWon": 0,
-    "lifetimePoints": 145,
+    "lifetimePoints": 150,
     "games": [
       "000001",
       "000004",
@@ -34,7 +35,8 @@
       "000011",
       "000012",
       "000013",
-      "000014"
+      "000014",
+      "000018"
     ]
   },
   "000003": {
@@ -188,14 +190,47 @@
   "000020": {
     "name": "EXAMPLE_PLAYER1",
     "password": "0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60",
+    "gamesPlayed": 3,
+    "gamesWon": 0,
+    "lifetimePoints": "0222222",
+    "games": [
+      "000015",
+      "000016",
+      "000017"
+    ]
+  },
+  "000021": {
+    "name": "EXAMPLE_PLAYER2",
+    "password": "0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60",
+    "gamesPlayed": 2,
+    "gamesWon": 2,
+    "lifetimePoints": "02727",
+    "games": [
+      "000015",
+      "000016"
+    ]
+  },
+  "000022": {
+    "name": "EXAMPLE_PLAYER3",
+    "password": "0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60",
+    "gamesPlayed": 1,
+    "gamesWon": 1,
+    "lifetimePoints": "027",
+    "games": [
+      "000017"
+    ]
+  },
+  "000023": {
+    "name": "EXAMPLE_PLAYER4",
+    "password": "0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60",
     "gamesPlayed": 0,
     "gamesWon": 0,
     "lifetimePoints": 0,
     "games": []
   },
-  "000021": {
-    "name": "EXAMPLE_PLAYER2",
-    "password": "0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60",
+  "000024": {
+    "name": "Player1769187320489",
+    "password": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a",
     "gamesPlayed": 0,
     "gamesWon": 0,
     "lifetimePoints": 0,
