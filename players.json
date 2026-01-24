@@ -2,9 +2,9 @@
   "000001": {
     "name": "player 1",
     "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
-    "gamesPlayed": 11,
-    "gamesWon": 11,
-    "lifetimePoints": 230,
+    "gamesPlayed": 12,
+    "gamesWon": 12,
+    "lifetimePoints": 240,
     "games": [
       "000001",
       "000003",
@@ -16,15 +16,16 @@
       "000012",
       "000013",
       "000014",
-      "000018"
+      "000018",
+      "000019"
     ]
   },
   "000002": {
     "name": "player 2",
     "password": "ebdf8cc00bc4d9ceee633c56c63b49955769a92ca060825c9b08e4af61326e2b",
-    "gamesPlayed": 11,
+    "gamesPlayed": 12,
     "gamesWon": 0,
-    "lifetimePoints": 150,
+    "lifetimePoints": 155,
     "games": [
       "000001",
       "000004",
@@ -36,7 +37,8 @@
       "000012",
       "000013",
       "000014",
-      "000018"
+      "000018",
+      "000019"
     ]
   },
   "000003": {
@@ -230,6 +232,14 @@
   },
   "000024": {
     "name": "Player1769187320489",
+    "password": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a",
+    "gamesPlayed": 0,
+    "gamesWon": 0,
+    "lifetimePoints": 0,
+    "games": []
+  },
+  "000025": {
+    "name": "Player1769257233359",
     "password": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a",
     "gamesPlayed": 0,
     "gamesWon": 0,

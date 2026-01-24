@@ -1060,3 +1060,25 @@ document.addEventListener("DOMContentLoaded", async()=>{
 document.getElementById("matchFilter").addEventListener("change",async (e)=>{
     await loadMatchPlayer(e.target.value)
 });
+
+
+
+var disconected=false;
+setInterval(async() =>{
+    
+    try
+    {
+        const res = await fetch('/ping')
+        if (res.ok && disconected)
+        {
+            disconected=false;
+            document.getElementById("networkDown").hidden=true;
+        }
+    }
+    
+    catch(error)
+    {
+        disconected=true;
+        document.getElementById("networkDown").hidden=false;
+    }
+},2000);
